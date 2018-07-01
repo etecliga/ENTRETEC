@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro</title>
+</h:head>
+<body>
+
+<h:form>
+	<center><h1>Cadastro</h1></center>
+		
+	<p:panel header="Dados Pessoais" style="margin: 20px 0px;">
+		<h:panelGrid columns="5" cellpadding="5">
+			<p:outputLabel value="Tipo de Usuário" for="tipoUsuario"/>
+			<p:selectOneRadio id="tipoUsuario" value="#{usuarioBean.usuario.tipoUsuario}">
+            	<f:selectItem itemLabel="Aluno" itemValue="Aluno" />
+            	<f:selectItem itemLabel="Professor" itemValue="Professor" />
+        	</p:selectOneRadio>
+		</h:panelGrid>
+		
+		<h:panelGrid columns="4" cellpadding="5">
+			<p:outputLabel for="nome" value="Nome Completo"/>
+			<p:inputText id="nome" value="#{usuarioBean.usuario.nome}" required="true"/>
+			
+			<p:outputLabel for="sexo" value="Sexo"/>
+			<p:selectOneMenu required="true" value="#{usuarioBean.usuario.sexo}" id="sexo">
+				<f:selectItem itemLabel="Masculino" itemValue="Masculino"/>
+				<f:selectItem itemLabel="Feminino" itemValue="Feminino"/>
+				<f:selectItem itemLabel="Selecione"/>
+			</p:selectOneMenu>
+						
+			<p:outputLabel for="email" value="E-mail"/>
+			<p:inputText id="email" value="#{usuarioBean.usuario.email}" placeholder="exemplo@ex.com" required="true"/>
+			
+			<p:outputLabel for="telefone" value="Telefone"/>
+			<p:inputMask id="telefone" value="#{usuarioBean.usuario.telefone}" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999"/>
+			
+			<p:outputLabel for="celular" value="Celular"/>
+			<p:inputMask id="celular" value="#{usuarioBean.usuario.celular}" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" required="true"/>
+			
+			<p:outputLabel for="rg" value="RG"/>
+			<p:inputMask id="rg" value="#{usuarioBean.usuario.rg}" placeholder="xx.xxx.xxx-x" mask="99.999.999-9" required="true"/>
+					
+			<p:outputLabel for="foto" value="Foto"/>
+			<p:fileUpload id="foto" mode="simple" skinSimple="true" value="#{usuarioBean.usuario.foto}"/>
+		</h:panelGrid>
+		
+		<h:panelGrid columns="5" cellpadding="5">
+			<p:outputLabel for="cpf" value="CPF" />
+			<p:inputMask id="cpf" value="#{usuarioBean.usuario.cpf}" placeholder="xxx-xxx-xxx-xx" mask="999-999-999-99" required="true"/>
+			
+			<p:outputLabel for="deficiencia" value="Portador de alguma deficiencia?"/>
+			<p:selectOneRadio id="deficiencia" value="#{usuarioBean.usuario.deficiencia}" layout="responsive" columns="3" required="true">
+	        	<f:selectItem itemLabel="Sim" itemValue="Sim" />
+	        	<f:selectItem itemLabel="Não" itemValue="Não"/>
+	    	</p:selectOneRadio>
+		</h:panelGrid>
+		
+		<h:panelGrid columns="4" cellpadding="5">
+			<h:outputLabel for="senha" value="Senha" />
+	        <p:password id="Senha" value="#{usuarioBean.usuario.senha}" placeholder="********" match="confirmarSenha" label="Senha" required="true" />
+	 
+	        <h:outputLabel for="confirmarSenha" value="Confirmação da senha" />
+	        <p:password id="confirmarSenha" label="Confirmação da senha" required="true" />
+	    </h:panelGrid>
+	    
+	    <h:panelGrid columns="3" cellpadding="5">
+	    	<p:outputLabel for="dataNasc" value="Data nascimento"/>
+	    	<p:calendar id="dataNasc" value="#{usuarioBean.usuario.dataNasc}" locale="de" navigator="true" required="true" pattern="dd/mm/yyyy"/>
+	    </h:panelGrid>
+	</p:panel>
+	
+	<p:panel header="Endereço" style="margin: 20px 0px;">
+		<h:panelGrid columns="6" cellpadding="5">
+			<p:outputLabel for="cep" value="CEP"/>
+			<p:inputMask placeholder="xxxxx-xxx" id="cep" value="#{usuarioBean.usuario.cep}" mask="99999-999" required="true"/>
+						
+			<p:outputLabel for="numeroCasa" value="Nº"/>
+			<p:inputText id="numeroCasa" value="#{usuarioBean.usuario.numeroCasa}" required="true"/>					
+		
+			<p:outputLabel for="rua" value="Rua"/>
+			<p:inputText id="rua" value="#{usuarioBean.usuario.rua}" placeholder="ex: Av Conceição" required="true"/>
+			
+			<p:outputLabel for="estado" value="Estado"/>
+			<p:selectOneMenu required="true" value="#{usuarioBean.usuario.estado}" id="estado">
+				<f:selectItem itemLabel="AC"/>
+				<f:selectItem itemLabel="AL"/>
+				<f:selectItem itemLabel="AM"/>
+				<f:selectItem itemLabel="AP"/>
+				<f:selectItem itemLabel="BA"/>
+				<f:selectItem itemLabel="CE"/>
+				<f:selectItem itemLabel="DF"/>
+				<f:selectItem itemLabel="ES"/>
+				<f:selectItem itemLabel="GO"/>
+				<f:selectItem itemLabel="MA"/>
+				<f:selectItem itemLabel="MG"/>
+				<f:selectItem itemLabel="MS"/>
+				<f:selectItem itemLabel="MT"/>
+				<f:selectItem itemLabel="PA"/>
+				<f:selectItem itemLabel="PB"/>
+				<f:selectItem itemLabel="PE"/>
+				<f:selectItem itemLabel="PI"/>
+				<f:selectItem itemLabel="PR"/>
+				<f:selectItem itemLabel="RJ"/>
+				<f:selectItem itemLabel="RN"/>
+				<f:selectItem itemLabel="RS"/>
+				<f:selectItem itemLabel="RO"/>
+				<f:selectItem itemLabel="RR"/>
+				<f:selectItem itemLabel="SE"/>
+				<f:selectItem itemLabel="SP"/>
+				<f:selectItem itemLabel="TO"/>
+			</p:selectOneMenu>						
+						
+			<p:outputLabel for="bairro" value="Bairro"/>
+			<p:inputText id="bairro" value="#{usuarioBean.usuario.bairro}" placeholder="ex: Jardim Guançã" required="true"/>
+			
+			<p:outputLabel for="cidade" value="Cidade"/>
+			<p:inputText id="cidade" value="#{usuarioBean.usuario.cidade}" placeholder="ex: Guarulhos" required="true"/>
+		</h:panelGrid>
+	</p:panel>
+			
+	<p:commandButton value="Cadastrar"/>
+</h:form>	
+
+</body>
+</html>
