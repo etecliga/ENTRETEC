@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html" 
+	  xmlns:f="http://java.sun.com/jsf/core" 
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Jornal Entretec</title>
+</h:head>
+<body>
+<h:form>
+
+	<center><h1>Jornal Entretec</h1></center>
+	
+	<p:layout style="min-width:400px; min-height:200px;">
+		<p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
+			<div>
+				<p:graphicImage id="imagem_jornal"/>
+			<!-- <h3> <p:outputLabel value="#{jornalBean.jornal.titulo}"/> </h3> -->
+			
+			<!-- <p> <p:outputLabel value="#{jornalBean.jornal.conteudo}"/> </p> -->
+			</div>	
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="west">
+			<p:scrollPanel mode="native">
+				<h2>Titulo</h2>
+				
+				
+				<p>Lorem Ipsum</p>
+			</p:scrollPanel>
+		</p:layoutUnit>
+	</p:layout>
+	
+</h:form>
+
+</body>
+</html>
